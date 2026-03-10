@@ -1,1 +1,28 @@
-cffh
+body {
+
+    font-family: Arial;
+    background: #f4f4f4;
+
+}
+
+.hero {
+
+    background: #2c3e50;
+    color: white;
+    padding: 80px;
+
+}
+
+.card img {
+
+    height: 180px;
+    object-fit: cover;
+
+}
+
+.plant-card {
+
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
