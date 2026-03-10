@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Energy Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        #map {
+            height: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 align="center">Energy Plants Map</h2>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+
+        var map = L.map('map').setView([22, 78], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        var plants = [
+
+            { name: "Kamuthi Solar Plant", lat: 9.35, lng: 78.35 },
+            { name: "Bhadla Solar Park", lat: 27.5, lng: 71.9 },
+            { name: "Pavagada Solar Park", lat: 14.1, lng: 77.4 },
+
+            { name: "Muppandal Wind Farm", lat: 8.23, lng: 77.71 },
+            { name: "Jaisalmer Wind Park", lat: 26.9, lng: 70.9 },
+
+            { name: "Koyna Hydroelectric Plant", lat: 17.4, lng: 73.7 },
+            { name: "Tehri Hydropower Plant", lat: 30.38, lng: 78.48 },
+
+            { name: "Kudankulam Nuclear Plant", lat: 8.17, lng: 77.54 },
+            { name: "Tarapur Nuclear Plant", lat: 19.85, lng: 72.66 },
+            { name: "Kaiga Nuclear Plant", lat: 14.86, lng: 74.43 }
+
+        ];
+
+        plants.forEach(function (p) {
+
+            L.marker([p.lat, p.lng])
+                .addTo(map)
+                .bindPopup(p.name);
+
+        });
+    </script>
+
+</body>
+
+</html>
